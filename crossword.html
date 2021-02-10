@@ -11,7 +11,7 @@
       const elements = await ohyay.getRoomElements(roomId, 'crossword_letter');
       let correct = true;
       elements.forEach(e => {
-        const letterCorrect = e.title.toLowerCase() === e.text.toLowerCase();
+        const letterCorrect = (e.title ?? '').toLowerCase() === (e.text ?? '').toLowerCase();
         if (!letterCorrect) {
           ohyay.updateElement(e.id, {
             color: 'red',
