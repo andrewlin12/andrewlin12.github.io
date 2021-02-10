@@ -12,9 +12,11 @@
       let correct = true;
       elements.forEach(e => {
         correct = correct && e.title === e.text;
+        console.log(e.title, e.text, correct);
       });
       
       const congrats = await ohyay.getRoomElements(roomId, 'crossword_congrats');
+      console.log('Congrats element', congrats);
       ohyay.updateElement(congrats.id, {
         visible: correct
       })
