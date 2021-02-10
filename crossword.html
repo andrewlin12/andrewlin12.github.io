@@ -16,8 +16,8 @@
       });
       
       const congrats = await ohyay.getRoomElements(roomId, 'crossword_congrats');
-      console.log('Congrats element', congrats);
-      ohyay.updateElement(congrats.id, {
+      console.log('Congrats element', congrats[0]);
+      ohyay.updateElement(congrats[0].id, {
         visible: correct
       })
     });
